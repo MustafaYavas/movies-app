@@ -49,6 +49,7 @@ const Navbar = () => {
         fullscreen={fullscreen}
         onHide={() => setShowMenu(false)}
         animation={false}
+        style={{ backgroundColor: '#0c2738' }}
       >
         <div
           className={`${styles['modal-close-button']} d-flex justify-content-end`}
