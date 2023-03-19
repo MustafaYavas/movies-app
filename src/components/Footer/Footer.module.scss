@@ -1,0 +1,40 @@
+.wrapper {
+  height: fit-content;
+  width: 100%;
+  background-color: #0c2738;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  margin-top: 5rem;
+
+  .footer {
+    width: 100%;
+    color: var(--navbar);
+    margin: 2rem 0;
+
+    .footer-items {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .header {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      & > *:not(:first-child) {
+        margin-top: 10px;
+        color: #3d6888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      & > *:not(:first-child) > small:hover {
+        cursor: pointer;
+        color: var(--navbar-hover);
+      }
+    }
+  }
+}
