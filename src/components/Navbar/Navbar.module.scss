@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   position: fixed;
+  z-index: 1000 !important;
 
   .navbar {
     display: flex;
@@ -36,7 +37,7 @@
     .navbar-links {
       a {
         color: var(--navbar);
-        font-size: 20px;
+        font-size: 16px;
         text-decoration: none;
         margin-left: 1rem;
       }
