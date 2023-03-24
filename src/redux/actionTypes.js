@@ -1,0 +1,6 @@
+export const FETCH_START = 'FETCH_START';
+export const FETCH_END = 'FETCH_END';
+
+export const FETCH_MOVIE_REQUEST = 'FETCH_MOVIE_REQUEST';
+export const FETCH_MOVIE_DATA = 'FETCH_MOVIE_DATA';
+export const FETCH_MOVIE_ERROR = 'FETCH_MOVIE_ERROR';

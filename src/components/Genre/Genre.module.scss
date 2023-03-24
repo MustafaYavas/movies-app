@@ -1,0 +1,19 @@
+.genres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: ltr;
+
+  .genre {
+    color: var(--navbar);
+    opacity: 0.7;
+    margin: 0 0.5rem;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .genre:hover {
+    opacity: 1;
+  }
+}
