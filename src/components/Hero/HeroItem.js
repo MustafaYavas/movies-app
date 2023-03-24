@@ -3,6 +3,7 @@ import { AiOutlineClockCircle, AiOutlineTag } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { GENRES } from '../../helpers/constants';
 import { getMoviesMDY } from '../../helpers/timeFunctions';
+import Button from '../Button/Button';
 import Genre from '../Genre/Genre';
 import styles from './Hero.module.scss';
 
@@ -69,9 +70,10 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
             </div>
           )}
 
-          <div className={`${styles['movie-footer']} mt-3 mt-lg-0`}>
-            <Link to={`/movie/${movies.id}`}>READ MORE</Link>
-          </div>
+          <Button
+            className={`${styles['movie-footer']} mt-3 mt-lg-0`}
+            child={<Link to={`/movie/${movies.id}`}>READ MORE</Link>}
+          />
         </div>
       </div>
     </div>

@@ -1,0 +1,43 @@
+.about-wrapper {
+  padding-top: 72px;
+  height: 85vh;
+  width: 100% !important;
+  color: var(--navbar);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .about-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 42px;
+    line-height: 74px;
+    font-weight: 800;
+  }
+
+  .about-paragraph {
+    text-align: center;
+    width: 50%;
+    font-family: Catamaran, sans-serif;
+    font-size: 22px;
+    line-height: 38px;
+    font-weight: 400;
+    opacity: 0.7;
+
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+      line-height: 25px;
+      width: 85%;
+    }
+  }
+}
+
+.about-subtitle {
+  font-size: 30px;
+  color: var(--navbar);
+}

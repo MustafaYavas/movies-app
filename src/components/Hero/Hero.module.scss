@@ -91,13 +91,13 @@
         color: var(--navbar);
         border-radius: 4px;
         text-decoration: none;
-      }
 
-      a:hover {
-        border-color: rgba(white, 1);
-        background-color: white;
-        color: black;
-        transition: 0.5s;
+        &:hover {
+          border-color: rgba(white, 1);
+          background-color: white;
+          color: black;
+          transition: 0.5s;
+        }
       }
     }
   }

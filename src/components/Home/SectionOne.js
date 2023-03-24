@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper';
 
 import styles from './SectionOne.module.scss';
-import MovieCard from '../MovieCard/MovieCard';
+import MovieCard from '../Card/MovieCard';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';

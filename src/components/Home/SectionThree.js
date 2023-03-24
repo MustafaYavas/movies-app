@@ -1,4 +1,4 @@
-import MovieCard from '../MovieCard/MovieCard';
+import MovieCard from '../Card/MovieCard';
 import styles from './SectionThree.module.scss';
 
 const SectionThree = ({ movies }) => {

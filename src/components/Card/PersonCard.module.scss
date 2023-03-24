@@ -1,0 +1,61 @@
+.person-card-container {
+  color: var(--navbar);
+  padding: 0 4rem !important;
+  margin: 5rem 0 10rem 0;
+
+  .person-img {
+    position: relative;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 2rem;
+    opacity: 0.7;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 5px 76px 0px rgba(135, 131, 135, 1);
+    -moz-box-shadow: 0px 5px 76px 0px rgba(135, 131, 135, 1);
+    box-shadow: 0px 5px 76px 0px rgba(135, 131, 135, 1);
+
+    .person-name {
+      position: absolute;
+      bottom: 15px;
+      right: 0;
+      left: 0;
+      font-size: 35px;
+      line-height: 40px;
+      font-weight: 800;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+      transition: 0.5s;
+      opacity: 0.8;
+    }
+  }
+
+  .person-info {
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+
+  .person-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: transparent;
+    border: 2px solid rgba(white, 0.1);
+    color: var(--navbar);
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    letter-spacing: 3px;
+
+    &:hover {
+      border-color: rgba(white, 1);
+      background-color: white;
+      color: black;
+      transition: 0.5s;
+    }
+  }
+}
