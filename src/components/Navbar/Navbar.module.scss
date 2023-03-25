@@ -1,11 +1,14 @@
 .wrapper {
-  height: 72px;
   width: 100%;
-  background-color: var(--bg-color-soft);
   display: flex;
   align-items: center;
   position: fixed;
+  // top: 0;
   z-index: 10000 !important;
+
+  &:hover {
+    background-color: var(--bg-color-soft) !important;
+  }
 
   .navbar {
     display: flex;
@@ -40,6 +43,7 @@
         font-size: 16px;
         text-decoration: none;
         margin-left: 1rem;
+        font-weight: 700;
       }
 
       a:hover {
@@ -48,7 +52,7 @@
     }
 
     .active-tab {
-      color: #ffc107 !important;
+      border-bottom: 2px solid #ffc107 !important;
     }
 
     .navbar-menu {

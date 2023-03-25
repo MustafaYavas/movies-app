@@ -9,40 +9,57 @@ import Modal from 'react-bootstrap/Modal';
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const changeActiveTabColor = (data) => {
     return data.isActive ? styles['active-tab'] : '';
   };
 
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.navbar}>
-        <div className={styles.logo}>
-          <img src={logo} alt="logo" />
-          <NavLink className={(data) => changeActiveTabColor(data)} to="/">
-            MoBees
-          </NavLink>
-        </div>
+    <div
+      className={styles.wrapper}
+      style={{
+        height: showMenu ? '0' : '72px',
+        backgroundColor: isScrolled ? 'var(--bg-color-soft)' : 'transparent',
+        transition: '.5s ease-in-out',
+      }}
+    >
+      {!showMenu && (
+        <div className={styles.navbar}>
+          <div className={styles.logo}>
+            <img src={logo} alt="logo" />
+            <NavLink to="/">MoBees</NavLink>
+          </div>
 
-        <div className={`${styles['navbar-links']} d-none d-sm-flex`}>
-          <NavLink className={(data) => changeActiveTabColor(data)} to="/about">
-            About
-          </NavLink>
-          <NavLink
-            className={(data) => changeActiveTabColor(data)}
-            to="/contact"
+          <div className={`${styles['navbar-links']} d-none d-sm-flex`}>
+            <NavLink
+              className={(data) => changeActiveTabColor(data)}
+              to="/about"
+            >
+              About
+            </NavLink>
+            <NavLink
+              className={(data) => changeActiveTabColor(data)}
+              to="/contact"
+            >
+              Contact
+            </NavLink>
+          </div>
+
+          <div
+            onClick={() => setShowMenu(true)}
+            className={`${styles['navbar-menu']} d-block d-sm-none`}
+            style={{ cursor: 'pointer' }}
           >
-            Contact
-          </NavLink>
+            <GiHamburgerMenu />
+          </div>
         </div>
-
-        <div
-          onClick={() => setShowMenu(true)}
-          className={`${styles['navbar-menu']} d-block d-sm-none`}
-          style={{ cursor: 'pointer' }}
-        >
-          <GiHamburgerMenu />
-        </div>
-      </div>
+      )}
 
       <Modal
         show={showMenu}
@@ -58,19 +75,25 @@ const Navbar = () => {
           <AiOutlineClose />
         </div>
         <Modal.Body>
-          <div
-            className={`${styles['modal-items']}`}
-            onClick={() => setShowMenu(false)}
-          >
+          <div className={`${styles['modal-items']}`}>
+            <NavLink
+              className={(data) => changeActiveTabColor(data)}
+              to="/"
+              onClick={() => setShowMenu(false)}
+            >
+              Home
+            </NavLink>
             <NavLink
               className={(data) => changeActiveTabColor(data)}
               to="/about"
+              onClick={() => setShowMenu(false)}
             >
               About
             </NavLink>
             <NavLink
               className={(data) => changeActiveTabColor(data)}
               to="/contact"
+              onClick={() => setShowMenu(false)}
             >
               Contact
             </NavLink>

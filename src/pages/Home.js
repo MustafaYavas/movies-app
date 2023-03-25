@@ -22,7 +22,7 @@ const Home = ({ allMovies, loading }) => {
         <>
           <Hero heroMovies={allMovies.heroMovies} />
           <SectionOne movies={allMovies} />
-          <SectionTwo movie={allMovies.popularMovies[9]} />
+          <SectionTwo movie={allMovies.popularMovies[7]} />
           <SectionThree movies={allMovies.popularMovies.slice(0, 5)} />
         </>
       )}

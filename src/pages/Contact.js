@@ -39,8 +39,8 @@ const Contact = () => {
       <h1>DON'T FORGET TO SAY HEY!</h1>
 
       <div className={styles['contact-subtitle']}>
-        <h3>Send Us</h3>
-        <h3>An Email.</h3>
+        <p>Send Us</p>
+        <p>An Email.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -91,7 +91,6 @@ const Contact = () => {
             placeholder="What do you want to say?*"
             rows="4"
             cols="50"
-            min
             className="col-12 col-md-7"
             type="textarea"
             required

@@ -64,7 +64,7 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
           )}
 
           <Button
-            className={`${styles['movie-footer']} mt-3 mt-lg-0`}
+            className={`${styles['movie-footer']} mt-3 mt-lg-0 d-none d-lg-block`}
             child={<Link to={`/movie/${movies.id}`}>READ MORE</Link>}
           />
         </div>

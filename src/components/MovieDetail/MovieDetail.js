@@ -49,33 +49,24 @@ const MovieDetail = ({ movie }) => {
           <p>{movie.overview}</p>
         </div>
 
-        <div className="w-100">
-          <p
-            className="d-flex justify-content-between"
-            style={{ width: '350px', fontSize: '20px' }}
-          >
-            <span className="fw-bold">Release Date: </span>
-            <span>{getMoviesMDY(movie.release_date)}</span>
-          </p>
+        <div className="w-100 row">
+          <div className="col-12 row">
+            <p className="fw-bold col-6 col-lg-4 p-0 ps-lg-3">Release Date: </p>
+            <p className="col-6">{getMoviesMDY(movie.release_date)}</p>
+          </div>
 
-          <p
-            className="d-flex justify-content-between"
-            style={{ width: '350px', fontSize: '20px' }}
-          >
-            <span className="fw-bold">IMDB: </span>
-            <span>{Math.round(movie.vote_average * 10) / 10}</span>
-          </p>
+          <div className="col-12 row">
+            <p className="fw-bold col-6 col-lg-4 p-0 ps-lg-3">IMDB: </p>
+            <p className="col-6">{Math.round(movie.vote_average * 10) / 10}</p>
+          </div>
 
-          <p
-            className="d-flex justify-content-between"
-            style={{ width: '350px', fontSize: '20px' }}
-          >
-            <span className="fw-bold">Duration: </span>{' '}
-            <span>
+          <div className="col-12 row">
+            <p className="fw-bold col-6 col-lg-4 p-0 ps-lg-3">Duration: </p>
+            <p className="col-6">
               {moment.duration(movie.runtime, 'minutes').hours()}h{' '}
               {moment.duration(movie.runtime, 'minutes').minutes()}m
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
       </div>
     </div>

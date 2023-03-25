@@ -29,13 +29,12 @@
     color: var(--navbar);
     padding-left: 5rem;
 
-    h2 {
-      font-size: 60px;
+    @media screen and (max-width: 992px) {
+      padding: 2rem;
     }
 
-    .info-sub-container {
-      // display: flex;
-      // gap: 15px;
+    h2 {
+      font-size: 60px;
     }
 
     .info-overview {

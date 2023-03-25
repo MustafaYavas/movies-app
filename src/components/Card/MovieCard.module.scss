@@ -1,6 +1,11 @@
 .card-wrapper {
   text-align: center;
 
+  &:hover {
+    transform: scale(1.01);
+    transition: 0.5s;
+  }
+
   @media screen and (max-width: 992px) {
     padding: 50px 0;
   }
