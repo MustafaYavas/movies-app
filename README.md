@@ -1,6 +1,6 @@
 # Movies App :honeybee:
 
-Simple movie search app created with React.js and Bootstrap.
+Movie app created with React.js and Bootstrap.
 [Check it out here!](https://mobees.vercel.app/)
 
 ## Table of Contents
