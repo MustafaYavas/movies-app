@@ -3,7 +3,7 @@ import styles from './SectionThree.module.scss';
 
 const SectionThree = ({ movies }) => {
   return (
-    <div className="row mb-5">
+    <div className={`${styles['section-three-container']} row`}>
       <h1 className={styles['section-three-title']}>New Releases</h1>
       <h4 className={styles['section-three-subtitle']}>
         Most recently released movies.
