@@ -7,6 +7,7 @@ import SectionOne from '../components/Home/SectionOne';
 import * as actionTypes from '../redux/actionTypes';
 import SectionTwo from '../components/Home/SectionTwo';
 import SectionThree from '../components/Home/SectionThree';
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 
 const Home = ({ allMovies, loading }) => {
   const dispatch = useDispatch();
@@ -25,16 +26,7 @@ const Home = ({ allMovies, loading }) => {
           <SectionThree movies={allMovies.popularMovies.slice(0, 5)} />
         </>
       )}
-      {loading && (
-        <div
-          style={{ height: '100vh', color: 'var(--bg-color)' }}
-          className="d-flex justify-content-center align-items-center"
-        >
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
-      )}
+      {loading && <LoadingSpinner />}
     </div>
   );
 };

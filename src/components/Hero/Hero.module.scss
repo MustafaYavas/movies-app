@@ -162,6 +162,10 @@
     .release-date {
       color: var(--navbar);
       margin-bottom: 10px;
+      direction: ltr;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       .date {
         margin-left: 0.5rem;
@@ -265,6 +269,10 @@
     .release-date {
       color: var(--navbar);
       margin-bottom: 10px;
+      direction: ltr;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       .date {
         margin-left: 0.5rem;

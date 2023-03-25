@@ -7,6 +7,7 @@ const initialState = {
   newMovies: [],
   popularMovies: [],
   error: null,
+  movieDetail: null,
 };
 
 export const movieReducer = (state = initialState, action) => {

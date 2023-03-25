@@ -4,7 +4,7 @@ import { AiOutlineTag } from 'react-icons/ai';
 import { GENRES } from '../../helpers/constants';
 import styles from './Genre.module.scss';
 
-const Genre = ({ genre_ids }) => {
+const Genre = ({ genre_ids, iconSize, fontSize }) => {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
@@ -18,11 +18,18 @@ const Genre = ({ genre_ids }) => {
   return (
     <div className={styles.genres}>
       <span>
-        <AiOutlineTag color="var(--navbar-hover)" size="17" />
+        <AiOutlineTag
+          color="var(--navbar-hover)"
+          size={iconSize ? iconSize : '17'}
+        />
       </span>
       {genres?.map((genre) => (
-        <p key={genre} className={styles.genre}>
-          {GENRES[genre]}
+        <p
+          key={genre?.id ? genre.id : genre}
+          className={styles.genre}
+          style={{ fontSize: fontSize ? fontSize : '12px' }}
+        >
+          {GENRES[genre?.id ? genre.id : genre]}
         </p>
       ))}
     </div>

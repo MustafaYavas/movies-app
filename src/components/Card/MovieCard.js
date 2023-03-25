@@ -24,7 +24,7 @@ const MovieCard = ({ slide, half, full, ...props }) => {
               top: slide ? '0' : '-13px',
             }}
           >
-            {vote_average}
+            {Math.round(vote_average * 10) / 10}
           </p>
         </div>
         <img
@@ -45,7 +45,7 @@ const MovieCard = ({ slide, half, full, ...props }) => {
         <Rating
           readonly
           stop={5}
-          initialRating={vote_average / 2}
+          initialRating={Math.round(vote_average * 10) / 20}
           emptySymbol={<AiOutlineStar color={'lightgray'} size={21} />}
           fullSymbol={<AiFillStar color={'orange'} size={21} />}
         />

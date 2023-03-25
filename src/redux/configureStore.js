@@ -2,11 +2,13 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import movieReducer from './reducers/movie';
 import loadingReducer from './reducers/loading';
+import singleMovieReducer from './reducers/singleMovie';
 
 import Saga from './saga/Saga';
 
 const combinedReducer = combineReducers({
   movieReducer,
+  singleMovieReducer,
   loadingReducer,
 });
 

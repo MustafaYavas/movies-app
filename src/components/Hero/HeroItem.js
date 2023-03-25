@@ -50,19 +50,12 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
             <Genre genre_ids={movies?.genre_ids} />
           </div>
           <div className={styles['release-date']}>
-            {left && (
-              <span>
-                <AiOutlineClockCircle color="var(--navbar-hover)" size="17" />
-              </span>
-            )}
+            <span>
+              <AiOutlineClockCircle color="var(--navbar-hover)" size="17" />
+            </span>
             <span className={styles['date']}>
               {getMoviesMDY(movies?.release_date)}
             </span>
-            {right && (
-              <span>
-                <AiOutlineTag color="var(--navbar-hover)" size="17" />
-              </span>
-            )}
           </div>
           {!right && (
             <div className={`${styles.overview} d-none d-lg-block`}>

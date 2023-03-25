@@ -33,9 +33,6 @@ const SectionTwo = ({ movie }) => {
           <span className={styles['date']}>
             {getMoviesMDY(movie?.release_date)}
           </span>
-          <span>
-            <AiOutlineTag color="var(--navbar-hover)" size="17" />
-          </span>
         </div>
         <div className={`${styles.overview} d-none d-lg-block`}>
           <span>{movie?.overview}</span>

@@ -3,7 +3,7 @@ import about from '../assets/about.jpg';
 import p1 from '../assets/p1.jpg';
 import p2 from '../assets/p2.jpg';
 import p3 from '../assets/p3.jpg';
-import PersonCard from '../components/Card/PersonCard';
+import ImageCard from '../components/Card/ImageCard';
 
 const About = () => {
   return (
@@ -31,17 +31,20 @@ const About = () => {
         <p className={`${styles['about-subtitle']} d-none d-lg-block`}>
           OUR TEAM
         </p>
-        <PersonCard
+        <ImageCard
+          person
           className="col-12 col-lg-4 mt-4"
           image={p1}
           name="John Doe"
         />
-        <PersonCard
+        <ImageCard
+          person
           className="col-12 col-lg-4 mt-4"
           image={p2}
           name="Jane Doe"
         />
-        <PersonCard
+        <ImageCard
+          person
           className="col-12 col-lg-4 mt-4"
           image={p3}
           name="John Doe"

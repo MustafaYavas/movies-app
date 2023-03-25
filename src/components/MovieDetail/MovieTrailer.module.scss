@@ -1,0 +1,17 @@
+.video-container {
+  margin: 10rem 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  h3 {
+    color: var(--navbar-hover);
+    margin-bottom: 2rem;
+    margin-left: 10%;
+  }
+
+  .video {
+    width: 100%;
+  }
+}
