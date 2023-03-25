@@ -3,7 +3,7 @@ import HeroItem from './HeroItem';
 
 const Hero = ({ heroMovies }) => {
   return (
-    <div className={`${styles['container-wrapper']}`}>
+    <div className={`${styles['hero-container']}`}>
       <div className="row">
         <div className="col-12 col-md-8 p-0" style={{ cursor: 'pointer' }}>
           <HeroItem left movies={heroMovies[0]} />
