@@ -32,8 +32,10 @@ const Navbar = () => {
       {!showMenu && (
         <div className={styles.navbar}>
           <div className={styles.logo}>
-            <img src={logo} alt="logo" />
-            <NavLink to="/">MoBees</NavLink>
+            <NavLink to="/">
+              <img src={logo} alt="logo" />
+              MoBees
+            </NavLink>
           </div>
 
           <div className={`${styles['navbar-links']} d-none d-sm-flex`}>

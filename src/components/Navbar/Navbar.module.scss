@@ -30,6 +30,9 @@
         color: var(--navbar);
         font-size: 28px;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       a:hover {
