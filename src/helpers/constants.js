@@ -19,3 +19,8 @@ export const GENRES = {
   10752: 'War',
   37: 'Western',
 };
+
+export const BG_IMAGES = {
+  BG: 'linear-gradient(to bottom, rgba(8, 27, 39, .7), rgba(8, 27, 39, .7))',
+  FG: 'linear-gradient(to bottom, rgba(8, 27, 39, .1), rgba(8, 27, 39, 1))',
+};

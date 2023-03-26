@@ -30,18 +30,18 @@ const MovieDetail = ({ movie }) => {
           <h2>{movie.original_title}</h2>
         </div>
 
-        <div className={`${styles['info-sub-container']} row`}>
+        <div className={`${styles['info-sub-container']} row w-100`}>
           <Rating
             readonly
             stop={5}
             initialRating={(movie.vote_average * 10) / 20}
-            emptySymbol={<AiOutlineStar color={'lightgray'} size={28} />}
-            fullSymbol={<AiFillStar color={'orange'} size={28} />}
-            className="col-12 col-lg-6 text-center text-lg-start"
+            emptySymbol={<AiOutlineStar color={'lightgray'} size={24} />}
+            fullSymbol={<AiFillStar color={'orange'} size={24} />}
+            className="col-12 col-lg-3 text-center text-lg-start"
           />
 
-          <div className="col-12 col-lg-6 mt-1 mt-lg-0">
-            <Genre genre_ids={movie.genres} iconSize={28} fontSize={20} />
+          <div className="col-12 col-lg-9 mt-1 mt-lg-0">
+            <Genre genre_ids={movie.genres} iconSize={24} fontSize={18} />
           </div>
         </div>
 

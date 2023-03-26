@@ -19,7 +19,7 @@ const ImageCard = ({ className, image, name, person }) => {
             aliquip ex ea commodo consequat.
           </p>
 
-          <Button className={`${styles['person-btn']}`} child={'VIEW'} />
+          <button className={`${styles['person-btn']} w-100`}>VIEW</button>
         </>
       )}
     </div>

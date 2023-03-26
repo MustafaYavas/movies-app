@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { AiOutlineClockCircle, AiOutlineTag } from 'react-icons/ai';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { GENRES } from '../../helpers/constants';
 import { getMoviesMDY } from '../../helpers/timeFunctions';
-import Button from '../Button/Button';
 import Genre from '../Genre/Genre';
+import { BG_IMAGES } from '../../helpers/constants';
 import styles from './Hero.module.scss';
 
 const HeroItem = ({ movies, left, right, right1, right2 }) => {
@@ -12,7 +10,7 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
     <div
       className={styles['hero-wrapper']}
       style={{
-        backgroundImage: `${`linear-gradient(to bottom, rgba(8, 27, 39, .1), rgba(8, 27, 39, 1))`}, 
+        backgroundImage: `${BG_IMAGES.BG}, 
         url(https://image.tmdb.org/t/p/original/${
           movies?.backdrop_path || movies?.poster
         })`,
@@ -26,8 +24,9 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
         ${right1 && styles['bg-right-img-one']} 
         ${right2 && styles['bg-right-img-two']}`}
         style={{
-          backgroundImage: `${`linear-gradient(to bottom, rgba(8, 27, 39, .1), rgba(8, 27, 39, 1))`}, 
-          url(https://image.tmdb.org/t/p/original/${
+          backgroundImage: `${
+            BG_IMAGES.FG
+          }, url(https://image.tmdb.org/t/p/original/${
             movies?.backdrop_path || movies?.poster
           })`,
         }}
@@ -63,10 +62,11 @@ const HeroItem = ({ movies, left, right, right1, right2 }) => {
             </div>
           )}
 
-          <Button
+          <div
             className={`${styles['movie-footer']} mt-3 mt-lg-0 d-none d-lg-block`}
-            child={<Link to={`/movie/${movies.id}`}>READ MORE</Link>}
-          />
+          >
+            <Link to={`/movie/${movies.id}`}>READ MORE</Link>
+          </div>
         </div>
       </div>
     </div>

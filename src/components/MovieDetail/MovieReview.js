@@ -25,34 +25,40 @@ const MovieReview = ({ reviews }) => {
         {review && truncate && (
           <>
             {review?.content.substring(0, 200)}{' '}
-            <span
-              style={{
-                cursor: 'pointer',
-                fontSize: '12px',
-                fontStyle: 'italic',
-                color: '#b3b6ba',
-              }}
-              onClick={() => setTruncate(false)}
-            >
-              ... Show more
-            </span>
+            {review?.content.length > 200 && (
+              <span
+                style={{
+                  cursor: 'pointer',
+                  fontSize: '12px',
+                  fontStyle: 'italic',
+                  color: '#b3b6ba',
+                  whiteSpace: 'nowrap',
+                }}
+                onClick={() => setTruncate(false)}
+              >
+                ... show more
+              </span>
+            )}
           </>
         )}
 
         {review && !truncate && (
           <>
             "{review?.content}"{' '}
-            <span
-              style={{
-                cursor: 'pointer',
-                fontSize: '12px',
-                fontStyle: 'italic',
-                color: '#b3b6ba',
-              }}
-              onClick={() => setTruncate(true)}
-            >
-              ... Show less
-            </span>
+            {review?.content.length > 200 && (
+              <span
+                style={{
+                  cursor: 'pointer',
+                  fontSize: '12px',
+                  fontStyle: 'italic',
+                  color: '#b3b6ba',
+                  whiteSpace: 'nowrap',
+                }}
+                onClick={() => setTruncate(true)}
+              >
+                ... show less
+              </span>
+            )}
           </>
         )}
       </div>

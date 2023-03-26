@@ -35,6 +35,10 @@
 
     h2 {
       font-size: 60px;
+
+      @media screen and (max-width: 576px) {
+        font-size: 45px !important;
+      }
     }
 
     .info-overview {

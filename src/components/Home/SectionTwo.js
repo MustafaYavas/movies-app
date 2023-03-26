@@ -1,16 +1,17 @@
-import { AiOutlineClockCircle, AiOutlineTag } from 'react-icons/ai';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 
 import styles from './SectionTwo.module.scss';
 import Genre from '../Genre/Genre';
 import { getMoviesMDY } from '../../helpers/timeFunctions';
 import { Link } from 'react-router-dom';
+import { BG_IMAGES } from '../../helpers/constants';
 
 const SectionTwo = ({ movie }) => {
   return (
     <div
       className={styles['section-two-container']}
       style={{
-        backgroundImage: `${`linear-gradient(to bottom, rgba(8, 27, 39, .1), rgba(8, 27, 39, 1))`}, 
+        backgroundImage: `${BG_IMAGES.FG}, 
         url(https://image.tmdb.org/t/p/original/${
           movie?.backdrop_path || movie?.poster
         })`,

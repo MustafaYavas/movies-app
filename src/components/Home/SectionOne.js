@@ -99,15 +99,6 @@ const SectionOne = ({ movies }) => {
             </SwiperSlide>
           ))}
       </Swiper>
-
-      {/* <div className={`${styles['movie-tabs']} row`}>
-        {selectedMovies?.length > 0 &&
-          selectedMovies?.map((movie) => (
-            <div key={movie.id} className="col-12 col-md-6 col-lg-3">
-              <MovieCard {...movie} />
-            </div>
-          ))}
-      </div> */}
     </div>
   );
 };
