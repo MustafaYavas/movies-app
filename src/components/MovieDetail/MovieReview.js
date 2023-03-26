@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import styles from './MovieReview.module.scss';
 
 const MovieReview = ({ reviews }) => {
   const review = reviews[0];
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   const [truncate, setTruncate] = useState(
     review?.content.length > 200 ? true : false
   );
 
   return (
-    <div className={styles['review-container']}>
+    <div className={styles['review-container']} data-aos="zoom-in">
       <h1>A viewer's thoughts</h1>
       <div className={styles['review']}>
         {!review && (

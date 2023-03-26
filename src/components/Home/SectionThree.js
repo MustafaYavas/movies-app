@@ -1,9 +1,20 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 import MovieCard from '../Card/MovieCard';
 import styles from './SectionThree.module.scss';
 
 const SectionThree = ({ movies }) => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className={`${styles['section-three-container']} row`}>
+    <div
+      className={`${styles['section-three-container']} row `}
+      data-aos="fade-up"
+    >
       <h1 className={styles['section-three-title']}>New Releases</h1>
       <h4 className={styles['section-three-subtitle']}>
         Most recently released movies.

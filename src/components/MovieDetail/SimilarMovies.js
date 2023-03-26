@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import MovieCard from '../Card/MovieCard';
 import styles from './SimilarMovies.module.scss';
@@ -6,8 +9,12 @@ import styles from './SimilarMovies.module.scss';
 register();
 
 const SimilarMovies = ({ similars }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
-    <div className={styles['similar-container']}>
+    <div className={styles['similar-container']} data-aos="fade-up">
       <h1>Also check out these movies:</h1>
       <div className="d-none d-xl-block">
         <swiper-container

@@ -1,12 +1,19 @@
 import { AiOutlineClockCircle } from 'react-icons/ai';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import styles from './SectionTwo.module.scss';
 import Genre from '../Genre/Genre';
 import { getMoviesMDY } from '../../helpers/timeFunctions';
 import { Link } from 'react-router-dom';
 import { BG_IMAGES } from '../../helpers/constants';
+import { useEffect } from 'react';
 
 const SectionTwo = ({ movie }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div
       className={styles['section-two-container']}
@@ -16,6 +23,7 @@ const SectionTwo = ({ movie }) => {
           movie?.backdrop_path || movie?.poster
         })`,
       }}
+      data-aos="zoom-out"
     >
       <div className={`${styles['section-two-info']}`}>
         <div className={styles['rating-badge']}>

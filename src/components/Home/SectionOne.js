@@ -1,6 +1,8 @@
 import { useEffect, useState, useTransition } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import styles from './SectionOne.module.scss';
 import MovieCard from '../Card/MovieCard';
@@ -12,6 +14,10 @@ const SectionOne = ({ movies }) => {
   const [type, setType] = useState('cult');
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
 
   useEffect(() => {
     let newMovies = [];
@@ -35,7 +41,7 @@ const SectionOne = ({ movies }) => {
   };
 
   return (
-    <div className={styles['section-one-container']}>
+    <div className={styles['section-one-container']} data-aos="slide-left">
       <div className={`${styles['section-title-wrapper']} row`}>
         <div
           className={`${styles['title-left']} col-12 col-lg-6 text-center text-lg-start`}

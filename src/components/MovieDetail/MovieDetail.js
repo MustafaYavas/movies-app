@@ -1,12 +1,19 @@
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import moment from 'moment';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import Rating from 'react-rating';
 import Genre from '../Genre/Genre';
 import styles from './MovieDetail.module.scss';
 import { getMoviesMDY } from '../../helpers/timeFunctions';
+import { useEffect } from 'react';
 
 const MovieDetail = ({ movie }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div
       className={`${styles['movie-detail-container']} row`}
@@ -17,7 +24,10 @@ const MovieDetail = ({ movie }) => {
         })`,
       }}
     >
-      <div className={`col-12 col-lg-4 ${styles['image-container']}`}>
+      <div
+        className={`col-12 col-lg-4 ${styles['image-container']}`}
+        data-aos="slide-right"
+      >
         <img
           className={styles['poster-size']}
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -25,7 +35,10 @@ const MovieDetail = ({ movie }) => {
         />
       </div>
 
-      <div className={`col-12 col-lg-8 ${styles['info-container']}`}>
+      <div
+        className={`col-12 col-lg-8 ${styles['info-container']}`}
+        data-aos="slide-left"
+      >
         <div className="d-flex justify-content-between align-items-center">
           <h2>{movie.original_title}</h2>
         </div>
