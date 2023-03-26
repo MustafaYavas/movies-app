@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Movie from './pages/Movie';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import NoPageFound from './pages/NoPageFound';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="movie/:id" element={<Movie />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NoPageFound />} />
       </Routes>
     </Layout>
   );
