@@ -21,7 +21,11 @@ const MovieTrailer = ({ videos }) => {
   }, [videos]);
 
   return (
-    <div className={styles['video-container']} data-aos="zoom-in">
+    <div
+      className={styles['video-container']}
+      data-aos="zoom-in"
+      data-aos-once="true"
+    >
       <h3>Official trailer of this movie:</h3>
       <div className="w-100 d-flex justify-content-center align-items-center">
         <iframe

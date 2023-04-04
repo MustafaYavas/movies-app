@@ -24,6 +24,7 @@ const SectionTwo = ({ movie }) => {
         })`,
       }}
       data-aos="zoom-out"
+      data-aos-once="true"
     >
       <div className={`${styles['section-two-info']}`}>
         <div className={styles['rating-badge']}>

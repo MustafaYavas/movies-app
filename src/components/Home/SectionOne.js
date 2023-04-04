@@ -43,7 +43,11 @@ const SectionOne = ({ movies }) => {
   };
 
   return (
-    <div className={styles['section-one-container']} data-aos="slide-left">
+    <div
+      className={styles['section-one-container']}
+      data-aos="slide-left"
+      data-aos-once="true"
+    >
       <div className={`${styles['section-title-wrapper']} row`}>
         <div
           className={`${styles['title-left']} col-12 col-lg-6 text-center text-lg-start`}
@@ -105,16 +109,17 @@ const SectionOne = ({ movies }) => {
         {selectedMovies?.length > 0 &&
           selectedMovies?.map((movie) => (
             <SwiperSlide key={movie}>
-              <div className="d-flex justify-content-center align-items-start">
+              <div className="d-flex justify-content-center align-items-center">
                 <MovieCard slide {...movie} />
 
-                <p className="w-25 ms-5 mt-1 fst-italic">
-                  {isSlideChange && (
-                    <TypeAnimation
-                      sequence={[movie.overview, 10000]}
-                      speed={50}
-                    />
-                  )}
+                <p className="w-25 ms-5 mt-1 fst-italic d-none d-md-block">
+                  {isSlideChange &&
+                    (isPending ? null : (
+                      <TypeAnimation
+                        sequence={[movie.overview, 10000]}
+                        speed={50}
+                      />
+                    ))}
                 </p>
               </div>
             </SwiperSlide>

@@ -27,6 +27,7 @@ const MovieDetail = ({ movie }) => {
       <div
         className={`col-12 col-lg-4 ${styles['image-container']}`}
         data-aos="slide-right"
+        data-aos-once="true"
       >
         <img
           className={styles['poster-size']}
@@ -38,6 +39,7 @@ const MovieDetail = ({ movie }) => {
       <div
         className={`col-12 col-lg-8 ${styles['info-container']}`}
         data-aos="slide-left"
+        data-aos-once="true"
       >
         <div className="d-flex justify-content-between align-items-center">
           <h2>{movie.original_title}</h2>

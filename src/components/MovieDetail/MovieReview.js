@@ -16,7 +16,11 @@ const MovieReview = ({ reviews }) => {
   );
 
   return (
-    <div className={styles['review-container']} data-aos="zoom-in">
+    <div
+      className={styles['review-container']}
+      data-aos="zoom-in"
+      data-aos-once="true"
+    >
       <h1>A viewer's thoughts</h1>
       <div className={styles['review']}>
         {!review && (

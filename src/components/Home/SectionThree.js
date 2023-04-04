@@ -14,6 +14,7 @@ const SectionThree = ({ movies }) => {
     <div
       className={`${styles['section-three-container']} row `}
       data-aos="fade-up"
+      data-aos-once="true"
     >
       <h1 className={styles['section-three-title']}>New Releases</h1>
       <h4 className={styles['section-three-subtitle']}>

@@ -14,7 +14,11 @@ const SimilarMovies = ({ similars }) => {
   }, []);
 
   return (
-    <div className={styles['similar-container']} data-aos="fade-up">
+    <div
+      className={styles['similar-container']}
+      data-aos="fade-up"
+      data-aos-once="true"
+    >
       <h1>Also check out these movies:</h1>
       <div className="d-none d-xl-block">
         <swiper-container
