@@ -3,7 +3,6 @@ import * as actionTypes from '../actionTypes';
 import {
   handleFetchCultMovies,
   handleFetchHeroMovies,
-  handleFetchMovieReview,
   handleFetchMovieReviews,
   handleFetchMovieVideos,
   handleFetchNewMovies,
@@ -12,29 +11,20 @@ import {
   handleFetchSingleMovie,
 } from './Api';
 
-const actionData = function (type, payload, event) {
+const actionData = function (type, payload) {
   return { type, payload };
 };
 
 export const getMovies = function* () {
   yield put(actionData(actionTypes.FETCH_START));
   try {
-    const { cultMovies, recomMovies, heroMovies, newMovies, popularMovies } =
-      yield all({
-        cultMovies: call(handleFetchCultMovies),
-        recomMovies: call(handleFetchRecomMovies),
-        heroMovies: call(handleFetchHeroMovies),
-        newMovies: call(handleFetchNewMovies),
-        popularMovies: call(handleFetchNewMovies),
-      });
-
-    const result = {
-      heroMovies,
-      cultMovies,
-      recomMovies,
-      newMovies,
-      popularMovies,
-    };
+    const result = yield all({
+      cultMovies: call(handleFetchCultMovies),
+      recomMovies: call(handleFetchRecomMovies),
+      heroMovies: call(handleFetchHeroMovies),
+      newMovies: call(handleFetchNewMovies),
+      popularMovies: call(handleFetchNewMovies),
+    });
 
     yield put(actionData(actionTypes.FETCH_MOVIE_DATA, result));
     yield put(actionData(actionTypes.FETCH_END));
@@ -47,19 +37,12 @@ export const getMovies = function* () {
 export const getSingleMovie = function* ({ payload }) {
   yield put(actionData(actionTypes.FETCH_START));
   try {
-    const { movie, reviews, videos, similars } = yield all({
+    const result = yield all({
       movie: call(handleFetchSingleMovie, payload),
       reviews: call(handleFetchMovieReviews, payload),
       videos: call(handleFetchMovieVideos, payload),
       similars: call(handleFetchSimilarMovies, payload),
     });
-
-    const result = {
-      movie,
-      reviews,
-      videos,
-      similars,
-    };
 
     yield put(actionData(actionTypes.FETCH_SINGLE_MOVIE_DATA, result));
     yield put(actionData(actionTypes.FETCH_END));
