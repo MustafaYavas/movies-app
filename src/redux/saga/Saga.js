@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import * as actionTypes from '../actionTypes';
 import {
   handleFetchCultMovies,
@@ -19,11 +19,14 @@ const actionData = function (type, payload, event) {
 export const getMovies = function* () {
   yield put(actionData(actionTypes.FETCH_START));
   try {
-    const cultMovies = yield call(handleFetchCultMovies);
-    const recomMovies = yield call(handleFetchRecomMovies);
-    const heroMovies = yield call(handleFetchHeroMovies);
-    const newMovies = yield call(handleFetchNewMovies);
-    const popularMovies = yield call(handleFetchNewMovies);
+    const { cultMovies, recomMovies, heroMovies, newMovies, popularMovies } =
+      yield all({
+        cultMovies: call(handleFetchCultMovies),
+        recomMovies: call(handleFetchRecomMovies),
+        heroMovies: call(handleFetchHeroMovies),
+        newMovies: call(handleFetchNewMovies),
+        popularMovies: call(handleFetchNewMovies),
+      });
 
     const result = {
       heroMovies,
@@ -44,10 +47,12 @@ export const getMovies = function* () {
 export const getSingleMovie = function* ({ payload }) {
   yield put(actionData(actionTypes.FETCH_START));
   try {
-    const movie = yield call(handleFetchSingleMovie, payload);
-    const reviews = yield call(handleFetchMovieReviews, payload);
-    const videos = yield call(handleFetchMovieVideos, payload);
-    const similars = yield call(handleFetchSimilarMovies, payload);
+    const { movie, reviews, videos, similars } = yield all({
+      movie: call(handleFetchSingleMovie, payload),
+      reviews: call(handleFetchMovieReviews, payload),
+      videos: call(handleFetchMovieVideos, payload),
+      similars: call(handleFetchSimilarMovies, payload),
+    });
 
     const result = {
       movie,
